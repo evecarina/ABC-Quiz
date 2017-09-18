@@ -48,7 +48,7 @@ const app = {
                 'Elefante',
                 'Ballena'
             ],
-            srcImg: 'assets/img/serpiente.png',
+            srcImg: 'assets/img/pulpo.png',
             rptaCorrecta: 'Murcielago',
             turespuesta: undefined
         }
