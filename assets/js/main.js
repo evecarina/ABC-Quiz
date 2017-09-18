@@ -92,7 +92,7 @@ const app = {
                 <div class="col-lg-12 col-xl-12 col-sm-12"><h2>${app.juego[app.preguntaInicio].pregunta}</h2></div>\
             </div>`)
         $('#opciones').append(
-            `<div class="row justify-content-xs-center ">
+            `<div class="row  ">
                 <div class="col-lg-4 col-xl-5 col-sm-5 btn-opciones">${app.juego[app.preguntaInicio].opciones[0]}</div>\
                 <div class="col-lg-4 col-xl-5 col-sm-5 btn-opciones">${app.juego[app.preguntaInicio].opciones[1]}</div>\
                 <div class="col-lg-3  col-xl-5 col-sm-5 btn-opciones">${app.juego[app.preguntaInicio].opciones[2]}</div>\
@@ -128,8 +128,28 @@ const app = {
     },
     // Respueta del usuario con las respuestas almacendas en el array
     comprobarRespuestas: () => {
-        app.limpiarCuestionario();
-        $('#enviar').append(`<div><button id='jugar'>Volver a jugar</button></div>`);
+
+      // comparando las respuestasCorrectas
+      app.limpiarCuestionario();
+        $('#imagen').append(`<img src='assets/img/vaca.png' class='img-fluid'>`);
+        for (var i = 0; i < sessionStorage.length; i++) {
+            let pregunta = sessionStorage.key(i);
+            let respuesta = sessionStorage.getItem(pregunta);
+            let indice;
+            app.juego.filter((index, s) => {
+                if (pregunta == index.pregunta) {
+                    return indice = s;
+                }
+            });
+            if (respuesta == app.juego[indice].rptaCorrecta) {
+                $("#opciones").append(`<div class="alert-correcto" role="alert"><p>${i+1}. ${pregunta}: </p><p class='parrafoRespuesta'> <strong> ${respuesta}</strong></p></div>`);
+                app.rptasCorrectas += 1;
+            } else {
+                $("#opciones").append(`<div class="alert-incorrecto" role="alert"><p>${i+1}. ${pregunta}: </p><p class='parrafoRespuesta'> <strong><del>${respuesta} </del></strong>${app.juego[indice].rptaCorrecta}</p></div>`);
+
+            }
+        }
+        $('#enviar').append(`<div><button id='jugar'>Iniciar</button></div>`);
         $('#progresos').append(`<div class="progress">\
         <div class="progress-bar" role="progressbar" style="width: ${app.contPorcentaje}%; height: 7px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>\
         </div>`);

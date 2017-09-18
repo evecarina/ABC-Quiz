@@ -1,3 +1,4 @@
+
 body {
   background-image: url(../img/bosque.jpg);
     background-position: center center;
@@ -32,13 +33,12 @@ h2 {
     font-size: 20px;
     font-size: 2vw;
 	  padding: 10px;
-    font-family:
 }
-.btn-opciones{
+.col-xl-5{
     background-color: #edecf0;
     color: #4b4668;
     font-size: 24px;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: 700;
     margin: 0 20px 15px;
     border: 1px solid #4b4668;
@@ -47,23 +47,22 @@ h2 {
     transition: background-color .3s linear,border-color .3s linear,color .3s linear;
 }
 
-button {
+button{
     text-align: center;
     padding: 6px 14px;
-    background-color: #4b4668;
+    background-color: #28a745;
     color: #fff;
     margin-top: 30px;
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0px 15px;
+    font-size: 20px;
+    font-weight: 700px;
+    margin-left: 2px;
     border: 1px solid #4b4668;
-    width: 70%;
-    border-radius: 5px;
-    transition: background-color .3s linear,border-color .3s linear,color .3s linear;
-
+    width: 10%;
+    border-radius: 3px;
 }
 .btn-opciones:hover{
-  background-color: #b6f45d;
+  width: 100px;
+  background-color: rgb(135, 241, 149);
 }
 /*iconos de redes sociales*/
 .iconos {
